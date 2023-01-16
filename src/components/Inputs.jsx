@@ -2,6 +2,7 @@ import React from 'react'
 import { useContext } from 'react'
 import { VocalContext } from '../context/VocalContextMain'
 import { useRegisterPlayer } from '../hooks/useRegisterPlayer'
+import { Form } from 'react-router-dom'
 const Inputs = () => {
     const { playerOne,setPlayerOne,playerTwo,setPlayerTwo,playerThree,setPlayerThree,playerFour,setPlayerFour}=useContext(VocalContext)
     const {Registrarse}=useRegisterPlayer()
@@ -27,11 +28,13 @@ const Inputs = () => {
           
             <input value={playerFour} onChange={(e)=>setPlayerFour(e.target.value)} type="text" id="company" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Jugador 4" />
         </div>   
+        <Form method="post">
         <button
         onClick={()=>Registrarse(playerOne,playerTwo,playerThree,playerFour)}
-        type="button"
+        type="submit"
         className="  bg-indigo-500 w-[300px] text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-indigo-600 focus:outline-none focus:shadow-outline outline-none"
       >Iniciar</button>   
+      </Form>
 
        
 
